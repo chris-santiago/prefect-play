@@ -24,7 +24,7 @@ async def task_final():
     print('All tasks complete!')
 
 
-@flow(name='concurrent-run')
+@flow(name='async-run')
 async def my_flow():
     start = time.perf_counter()
     res_1 = await task_3_sec.submit()
