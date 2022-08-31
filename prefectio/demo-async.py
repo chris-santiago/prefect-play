@@ -33,6 +33,7 @@ async def my_flow():
     res_4 = await task_2_sec.submit(wait_for=[res_2])
     res_5 = await task_2_sec.submit(wait_for=[res_1, res_3])
     final = await task_final.submit(wait_for=[res_4, res_5])
+    await final.wait()
     duration = time.perf_counter() - start
     print(f'Flow took {duration} seconds.')
 
